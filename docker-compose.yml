@@ -1,0 +1,12 @@
+version: '3'
+services:
+
+  apirebien:
+    build: .
+    container_name: apirebien
+    ports:
+      - "8018:8018"
+    volumes:
+      - .:/apirebien
+    env_file:
+      - .env
