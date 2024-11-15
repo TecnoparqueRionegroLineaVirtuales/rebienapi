@@ -20,8 +20,13 @@ class Account(TimeStampedModel):
         'Dirección',  blank=True, null=True, max_length=50)
     state = models.BooleanField("Activo", default=False)
     company = models.CharField('Empresa', max_length=50)
-    age = models.IntegerField('Edad', blank=True, null=True)
+    birthdate = models.DateField('Fecha Nacimiento', blank=True, null=True)
     occupation = models.CharField('Empresa', max_length=50)
+    city  = models.CharField('Ciudad', max_length=50)
+    gender = models.CharField('Género',  max_length=2, blank=True, null=True)
+    type_doc = models.CharField('Tipo de documento',  max_length=2, blank=True, null=True)
+    identity = models.BigIntegerField('Identificación', blank=True, null=True)
+    
 
     type_account = models.ForeignKey(
         TypeAccount,
