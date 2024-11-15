@@ -11,7 +11,7 @@ class TypeAccount(TimeStampedModel):
 
 
 class Account(TimeStampedModel):
-    email = models.EmailField('Email', max_length=50)
+    email = models.EmailField('Email', max_length=50, blank=True, null=True)
     password = models.CharField('Password', max_length=50)
     name = models.CharField('Nombre', max_length=50)
     last_name = models.CharField('Apellidos', max_length=50)
@@ -22,11 +22,12 @@ class Account(TimeStampedModel):
     company = models.CharField('Empresa', max_length=50)
     birthdate = models.DateField('Fecha Nacimiento', blank=True, null=True)
     occupation = models.CharField('Empresa', max_length=50)
-    city  = models.CharField('Ciudad', max_length=50)
+    city  = models.CharField('Ciudad', max_length=50, blank=True, null=True)
     gender = models.CharField('Género',  max_length=2, blank=True, null=True)
     type_doc = models.CharField('Tipo de documento',  max_length=2, blank=True, null=True)
     identity = models.BigIntegerField('Identificación', blank=True, null=True)
-    
+    work_area = models.CharField('Area de trabajo', max_length=50, blank=True, null=True)
+    compensation_box = models.CharField('Area de trabajo', max_length=50, blank=True, null=True)
 
     type_account = models.ForeignKey(
         TypeAccount,
