@@ -19,6 +19,9 @@ class Account(TimeStampedModel):
     address = models.TextField(
         'Dirección',  blank=True, null=True, max_length=50)
     state = models.BooleanField("Activo", default=False)
+    company = models.CharField('Empresa', max_length=50)
+    age = models.IntegerField('Edad', blank=True, null=True)
+    occupation = models.CharField('Empresa', max_length=50)
 
     type_account = models.ForeignKey(
         TypeAccount,
