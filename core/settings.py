@@ -151,7 +151,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/files/'
 MEDIA_ROOT = BASE_DIR / "files"
-STATIC_ROOT = 'static/'
+
+STATIC_URL = 'static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 
 if os.getenv('DJANGO_SUPERUSER_USERNAME'):
