@@ -12,7 +12,7 @@ class TypeAccount(TimeStampedModel):
 
 class Account(TimeStampedModel):
     email = models.EmailField('Email', max_length=50, blank=True, null=True)
-    password = models.CharField('Password', max_length=50)
+    password = models.CharField('Password', max_length=50, blank=True, null=True)
     name = models.CharField('Nombre', max_length=50)
     last_name = models.CharField('Apellidos', max_length=50)
     phone = models.BigIntegerField('Teléfono', blank=True, null=True)
