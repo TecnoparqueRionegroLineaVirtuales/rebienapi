@@ -27,7 +27,11 @@ class Account(TimeStampedModel):
     type_doc = models.CharField('Tipo de documento',  max_length=2, blank=True, null=True)
     identity = models.BigIntegerField('Identificación', blank=True, null=True)
     work_area = models.CharField('Area de trabajo', max_length=50, blank=True, null=True)
-    compensation_box = models.CharField('Area de trabajo', max_length=50, blank=True, null=True)
+    compensation_box = models.CharField('Caja de compensación', max_length=50, blank=True, null=True)
+    stature = models.FloatField('Estatura', blank=True, null=True)
+    weight = models.IntegerField('Peso', blank=True, null=True)
+    imc = models.FloatField('IMC', max_length=50, blank=True, null=True)
+    
 
     type_account = models.ForeignKey(
         TypeAccount,
